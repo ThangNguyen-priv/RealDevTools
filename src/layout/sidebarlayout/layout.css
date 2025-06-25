@@ -1,0 +1,25 @@
+
+/* Đẹp nhẹ nhàng cho scroll thanh dọc */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e2a50; /* màu nền track */
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7084be; /* màu nút kéo */
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aabbee;
+}
+/* Dark mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #1e2a50;
+}

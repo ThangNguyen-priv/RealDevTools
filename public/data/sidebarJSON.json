@@ -1,0 +1,202 @@
+[
+  {
+    "section": "HTML / CSS / JS TOOLS",
+    "items": [
+      {
+        "title": "HTML Formatter",
+        "href": "/html-formatter",
+        "icon": "fa-solid fa-code"
+      },
+      {
+        "title": "HTML Minifier",
+        "href": "/html-minifier",
+        "icon": "fa-solid fa-compress"
+      },
+      {
+        "title": "HTML Viewer",
+        "href": "/html-viewer",
+        "icon": "fa-solid fa-eye"
+      },
+      {
+        "title": "CSS Formatter",
+        "href": "/css-formatter",
+        "icon": "fa-solid fa-align-left"
+      },
+      {
+        "title": "CSS Minifier",
+        "href": "/css-minifier",
+        "icon": "fa-solid fa-compress"
+      },
+      {
+        "title": "JavaScript Formatter",
+        "href": "/js-formatter",
+        "icon": "fa-solid fa-align-left"
+      },
+      {
+        "title": "JavaScript Minifier",
+        "href": "/js-minifier",
+        "icon": "fa-solid fa-compress"
+      }
+    ]
+  },
+  {
+    "section": "TEXT TOOLS",
+    "items": [
+      {
+        "title": "Regex Tester",
+        "href": "/regex-tester",
+        "icon": "fa-regular fa-registered"
+      },
+      {
+        "title": "Text Diff Checker",
+        "href": "/text-diff",
+        "icon": "fa-regular fa-clone"
+      },
+      {
+        "title": "Word Counter",
+        "href": "/word-counter",
+        "icon": "fa-regular fa-file-word"
+      },
+      {
+        "title": "Lorem Ipsum Generator",
+        "href": "/lorem-ipsum",
+        "icon": "fa-solid fa-paragraph"
+      },
+      {
+        "title": "Random String Generator",
+        "href": "/random-string",
+        "icon": "fa-solid fa-random"
+      },
+      {
+        "title": "Case Converter",
+        "href": "/case-converter",
+        "icon": "fa-solid fa-text-height"
+      },
+      {
+        "title": "Duplicate Remover",
+        "href": "/duplicate-remover",
+        "icon": "fa-solid fa-eraser"
+      }
+    ]
+  },
+  {
+    "section": "ENCODING TOOLS",
+    "items": [
+      {
+        "title": "Base64 Encoder",
+        "href": "/base64-encode",
+        "icon": "fa-solid fa-lock"
+      },
+      {
+        "title": "Base64 Decoder",
+        "href": "/base64-decode",
+        "icon": "fa-solid fa-unlock"
+      },
+      {
+        "title": "URL Encoder",
+        "href": "/url-encode",
+        "icon": "fa-solid fa-link"
+      },
+      {
+        "title": "URL Decoder",
+        "href": "/url-decode",
+        "icon": "fa-solid fa-unlink"
+      },
+      {
+        "title": "JWT Decoder",
+        "href": "/jwt-decode",
+        "icon": "fa-solid fa-key"
+      },
+      {
+        "title": "HTML Entities",
+        "href": "/html-entities",
+        "icon": "fa-solid fa-percent"
+      },
+      {
+        "title": "Morse Code Translator",
+        "href": "/morse-code",
+        "icon": "fa-solid fa-wave-square"
+      }
+    ]
+  },
+  {
+    "section": "JSON & DATA TOOLS",
+    "items": [
+      {
+        "title": "JSON Formatter",
+        "href": "/json-formatter",
+        "icon": "fa-solid fa-code"
+      },
+      {
+        "title": "JSON Validator",
+        "href": "/json-validator",
+        "icon": "fa-solid fa-check"
+      },
+      {
+        "title": "JSON to CSV",
+        "href": "/json-to-csv",
+        "icon": "fa-solid fa-table"
+      },
+      {
+        "title": "CSV to JSON",
+        "href": "/csv-to-json",
+        "icon": "fa-solid fa-exchange-alt"
+      },
+      {
+        "title": "YAML to JSON",
+        "href": "/yaml-to-json",
+        "icon": "fa-solid fa-file-code"
+      },
+      {
+        "title": "JSON Viewer",
+        "href": "/json-viewer",
+        "icon": "fa-solid fa-eye"
+      },
+      {
+        "title": "Base Converter",
+        "href": "/base-converter",
+        "icon": "fa-solid fa-retweet"
+      }
+    ]
+  },
+  {
+    "section": "OTHER UTILITIES",
+    "items": [
+      {
+        "title": "UUID Generator",
+        "href": "/uuid-generator",
+        "icon": "fa-solid fa-key"
+      },
+      {
+        "title": "Timestamp Converter",
+        "href": "/timestamp-converter",
+        "icon": "fa-solid fa-clock"
+      },
+      {
+        "title": "Color Picker",
+        "href": "/color-picker",
+        "icon": "fa-solid fa-palette"
+      },
+      {
+        "title": "QR Code Generator",
+        "href": "/qr-code-generator",
+        "icon": "fa-solid fa-qrcode"
+      },
+      {
+        "title": "Barcode Generator",
+        "href": "/barcode-generator",
+        "icon": "fa-solid fa-barcode"
+      },
+      {
+        "title": "IP Address Lookup",
+        "href": "/ip-lookup",
+        "icon": "fa-solid fa-map-marker-alt"
+      },
+      {
+        "title": "User-Agent Parser",
+        "href": "/user-agent",
+        "icon": "fa-solid fa-user-secret"
+      }
+    ]
+  }
+]
