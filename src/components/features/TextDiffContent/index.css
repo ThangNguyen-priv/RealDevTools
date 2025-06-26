@@ -1,0 +1,11 @@
+@keyframes diffShow {
+  0%{
+    max-height: 0;
+  }
+  100% {
+    max-height: 100%;
+  }
+}
+.diff-show {
+  animation: diffShow 0.5s ease-out forwards;
+}

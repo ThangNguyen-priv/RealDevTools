@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SingleInputForm from "../../common/Form/SingleInputForm";
 import { SingleButton } from "../../common/Button";
 import TextDiffLine from "../../common/TextDiffLine/TextDiffLine";
@@ -10,6 +10,14 @@ export default function TextDiffContent() {
     const [resultLeft, setResultLeft] = useState<React.ReactNode[]>([]);
     const [resultRight, setResultRight] = useState<React.ReactNode[]>([]);
     const [same, setSame] = useState<boolean>(false);
+
+    // tự động xuống cuối trang
+    const BottomRef = useRef<HTMLDivElement>(null);
+    useEffect(()=>{
+        if (BottomRef.current) {
+            BottomRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    },[same, resultLeft, resultRight]);
 
     const OnDiffCheck = () => {
         if (!inputLeft || !inputRight) {
@@ -54,6 +62,7 @@ export default function TextDiffContent() {
                 />
             );
         }
+
         // neu khong co khac nhau thi set same la true
         setSame(!hasDifference);
 
@@ -87,7 +96,7 @@ export default function TextDiffContent() {
                     handleClick={handleClear}
                 />
             </div>
-            <TextDiffResult same={same} resultLeft={resultLeft} resultRight={resultRight} />
+            <TextDiffResult same={same} resultLeft={resultLeft} resultRight={resultRight} ref={BottomRef} />
         </div>
     );
 }

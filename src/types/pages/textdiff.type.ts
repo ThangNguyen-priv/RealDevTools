@@ -2,6 +2,7 @@ export type TextDiffResultProps = {
     resultLeft: React.ReactNode[];
     resultRight: React.ReactNode[];
     same: boolean;
+    ref: React.Ref<HTMLDivElement>;
 };
 
 export type TextDiffLineProps = {
