@@ -1,5 +1,4 @@
 
-// types/tools.ts
 export interface FormatterProps {
   input: string
   output: string
@@ -7,17 +6,20 @@ export interface FormatterProps {
   onFormat: () => void
 }
 
-export interface ToolConfig {
-  id: string
-  name: string
-  description: string
-  icon: string
-  path: string
-}
 
+export type TextDiffResultProps = {
+    resultLeft: React.ReactNode[];
+    resultRight: React.ReactNode[];
+    same: boolean;
+    ref: React.Ref<HTMLDivElement>;
+};
 
-export type HeaderLayoutProps = {
-  pathName: string;
+export type TextDiffLineProps = {
+    index: number;
+    isDifferent: boolean;
+    content: string;
+    variant: "left" | "right";
+    hasEmpty: boolean;
 }
 
 
@@ -37,3 +39,9 @@ export type ToolContextProps = {
     format: (inputCode:string) => { outputCode: string }
     |Promise<{ outputCode: string }>;
 };
+
+
+export type WordCounterPanelProps = {
+    output: number;
+    title: string;
+}

@@ -1,7 +1,7 @@
-import type { TextDiffResultProps } from "../../../types/pages/textdiff.type";
+import type { TextDiffResultProps } from '../../../types';
 import './index.css';
 
-export default function TextDiffResult({ resultLeft, resultRight, same , ref}: TextDiffResultProps) {
+export default function TextDiffResult({ resultLeft, resultRight, same , ref }: TextDiffResultProps) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
             {same ? (

@@ -13,11 +13,11 @@ export default function TextDiffContent() {
 
     // tự động xuống cuối trang
     const BottomRef = useRef<HTMLDivElement>(null);
-    useEffect(()=>{
+    useEffect(() => {
         if (BottomRef.current) {
             BottomRef.current.scrollIntoView({ behavior: "smooth" });
         }
-    },[same, resultLeft, resultRight]);
+    }, [same, resultLeft, resultRight]);
 
     const OnDiffCheck = () => {
         if (!inputLeft || !inputRight) {
@@ -25,48 +25,92 @@ export default function TextDiffContent() {
             return;
         }
 
-        const leftLines = inputLeft.trim().split("\n");
-        const rightLines = inputRight.trim().split("\n");
+        // Xử lý đầu vào
+        const leftLines = inputLeft.split("\n");
+        const rightLines = inputRight.split("\n");
+        // Đồng bộ hóa các dòng trống giữa hai mảng
         const maxLength = Math.max(leftLines.length, rightLines.length);
+
+        
+        // Duyệt qua từng vị trí để đồng bộ dòng trống
+        for (let i = 0; i < maxLength; i++) {
+            const leftLine = leftLines[i] || "";
+            const rightLine = rightLines[i] || "";
+            
+            // Nếu dòng phải trống mà dòng trái không trống, thêm dòng trống vào trái
+            if (rightLine === "" && leftLine !== "" && i < rightLines.length) {
+                leftLines.splice(i, 0, "");
+            }
+            // Nếu dòng trái trống mà dòng phải không trống, thêm dòng trống vào phải  
+            else if (leftLine === "" && rightLine !== "" && i < leftLines.length) {
+                rightLines.splice(i, 0, "");
+            }
+
+        }
+
+        // Cân bằng độ dài cuối cùng
+        while (leftLines.length < rightLines.length) {
+            leftLines.push("");
+        }
+        while (rightLines.length < leftLines.length) {
+            rightLines.push("");
+        }
+
+        const finalMaxLength = Math.max(leftLines.length, rightLines.length);
 
         const resultL = [];
         const resultR = [];
 
         let hasDifference = false;
 
-        for (let i = 0; i < maxLength; i++) {
-            // neu do dai dong ko bang nhau thi gan dong rong
-            const leftLine = leftLines[i] ?? "";
-            const rightLine = rightLines[i] ?? "";
-            // so sanh dong trai va phai
-            const isDifferent = leftLine !== rightLine;
+        // Bắt đầu từ index 0 để xử lý tất cả các dòng
+        for (let i = 0; i < finalMaxLength; i++) {
+            // Lấy dòng tương ứng từ cả hai bên
+            const leftLine = leftLines[i];
+            const rightLine = rightLines[i];
 
-            // neu khac nhau thi danh dau la khac nhau
+
+            // Kiểm tra nếu dòng trái hoặc phải là trống
+            const isLeftEmpty = leftLine === "";
+            const isRightEmpty = rightLine === "";
+
+            // Nếu cả hai đều trống thì xem như giống nhau
+            const bothEmpty = isLeftEmpty && isRightEmpty;
+            
+            // Kiểm tra độ dài mảng ban đầu
+            const lengthDifferent = leftLines.length < finalMaxLength || rightLines.length < finalMaxLength;
+            
+            // Đảm bảo đánh dấu là different nếu một bên có nội dung và bên kia trống
+            const contentDifferent = leftLine !== rightLine;
+
+            // Xác định nếu dòng này khác nhau (trừ trường hợp cả hai đều trống)
+            const isDifferent = !bothEmpty && (contentDifferent || lengthDifferent);
+
             if (isDifferent) hasDifference = true;
-            // tao mot div cho dong trai va phai
             resultL.push(
                 <TextDiffLine
+                    key={`left-${i}-${Date.now()}`}
                     index={i}
                     isDifferent={isDifferent}
                     content={leftLine}
                     variant="left"
+                    hasEmpty={isLeftEmpty}
                 />
             );
 
             resultR.push(
                 <TextDiffLine
+                    key={`right-${i}-${Date.now()}`}
                     index={i}
                     isDifferent={isDifferent}
                     content={rightLine}
                     variant="right"
+                    hasEmpty={isRightEmpty}
                 />
             );
         }
 
-        // neu khong co khac nhau thi set same la true
         setSame(!hasDifference);
-
-        // set ket qua trai va phai
         setResultLeft(resultL);
         setResultRight(resultR);
     };
@@ -96,7 +140,12 @@ export default function TextDiffContent() {
                     handleClick={handleClear}
                 />
             </div>
-            <TextDiffResult same={same} resultLeft={resultLeft} resultRight={resultRight} ref={BottomRef} />
+            <TextDiffResult
+                same={same}
+                resultLeft={resultLeft}
+                resultRight={resultRight}
+                ref={BottomRef}
+            />
         </div>
     );
 }
