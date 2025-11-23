@@ -1,7 +1,7 @@
-import ReviewLayout from "../../layout/tools/HtmlReview/ReviewLayout";
+import ReviewLayout from "../../layout/tools/htmlreview/ReviewLayout";
 
 export default function HTMLViewer() {
-    return(
+    return (
         <ReviewLayout />
     )
 }

@@ -1,9 +1,9 @@
-import TextDiffLayout from "../../layout/tools/TextDiff/TextDiffLayout";
+import TextDiffLayout from "../../layout/tools/textdiff/TextDiffLayout";
 
 export default function TextDiff() {
   return (
     <div>
-        <TextDiffLayout />
+      <TextDiffLayout />
     </div>
   )
 }

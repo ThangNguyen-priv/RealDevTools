@@ -1,7 +1,6 @@
-import { MainLayout } from "../layout/MainLayout";
+import { MainLayout } from "../layout/mainlayout";
 
-export default function HomePage()
-{
+export default function HomePage() {
   return (
     <MainLayout>
     </MainLayout>

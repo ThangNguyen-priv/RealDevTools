@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import { SidebarLayout } from '../SideBarLayout';
-import { HeaderLayout } from '../HeaderLayout';
-import ChatBotLayout from '../ChatBotLayout/ChatBotLayout';
+import { SidebarLayout } from '../sidebarlayout';
+import { HeaderLayout } from '../headerlayout';
+import ChatBotLayout from '../chatbotlayout/ChatBotLayout';
 
 
 export default function MainLayout() {
