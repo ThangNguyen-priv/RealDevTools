@@ -156,9 +156,6 @@ Commit thay đổi (git commit -m 'Add some amazing feature')
 Push lên nhánh (git push origin feature/amazing-feature)
 Mở Pull Request
 
-📄 Giấy phép
-Dự án được phân phối dưới giấy phép MIT. Xem tệp LICENSE để biết thêm thông tin.
-
 🔧 Các vấn đề đã biết và giải pháp
 Theme toggle: Nếu gặp vấn đề với việc chuyển đổi theme, hãy kiểm tra console để xem xung đột giữa next-themes và các class CSS khác
 Scrollbar style: Scrollbar được tùy chỉnh riêng trong file layout.css và có thể cần điều chỉnh để phù hợp với theme

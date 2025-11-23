@@ -1,4 +1,4 @@
-import { MainLayout } from "../layout/mainlayout";
+import { MainLayout } from "../layout/MainLayout";
 
 export default function HomePage()
 {

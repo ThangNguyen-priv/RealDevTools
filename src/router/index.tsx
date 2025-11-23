@@ -1,54 +1,65 @@
-import { CSSFormatter, CSSMinifier, Dashboard, Develop, HTMLFormatter, HTMLMinifier, JSONFormatter, PageNotFound } from '../pages/tools';
+import {
+    CSSFormatter,
+    CSSMinifier,
+    Dashboard,
+    Develop,
+    HTMLFormatter,
+    HTMLMinifier,
+    JSONFormatter,
+    PageNotFound,
+    WordCounter,
+} from "../pages/tools";
 
-
-import { createBrowserRouter } from 'react-router-dom';
-import JSFormatter from '../pages/tools/JSFormatter';
-import JSMinifier from '../pages/tools/JSMinifier';
-import HTMLViewer from '../pages/tools/HTMLViewer';
-import { MainLayout } from '../layout/mainlayout';
-import TextDiff from '../pages/tools/TextDiff';
+import { createBrowserRouter } from "react-router-dom";
+import JSFormatter from "../pages/tools/JSFormatter";
+import JSMinifier from "../pages/tools/JSMinifier";
+import HTMLViewer from "../pages/tools/HTMLViewer";
+import TextDiff from "../pages/tools/TextDiff";
+import { MainLayout } from "../layout/mainlayout";
 
 // ROUTES CONFIG
 const IMPLEMENTED_ROUTES = [
     {
-        path: 'html-formatter',
+        path: "html-formatter",
         element: <HTMLFormatter />,
     },
     {
-        path: 'css-formatter',
+        path: "css-formatter",
         element: <CSSFormatter />,
     },
     {
-        path: 'json-formatter',
+        path: "json-formatter",
         element: <JSONFormatter />,
     },
     {
-        path: 'html-minifier',
+        path: "html-minifier",
         element: <HTMLMinifier />,
     },
     {
-        path: 'css-minifier',
+        path: "css-minifier",
         element: <CSSMinifier />,
     },
     {
-        path: 'js-formatter',
+        path: "js-formatter",
         element: <JSFormatter />,
     },
     {
-        path: 'js-minifier',
+        path: "js-minifier",
         element: <JSMinifier />,
     },
     {
-        path: 'html-viewer',
+        path: "html-viewer",
         element: <HTMLViewer />,
     },
     {
-        path: 'text-diff',
+        path: "text-diff",
         element: <TextDiff />,
     },
-
-
-]
+    {
+        path: "word-counter",
+        element: <WordCounter />,
+    },
+];
 
 //  DEVELOPMENT ROUTES
 const DEVELOPMENT_ROUTES = [
@@ -76,29 +87,29 @@ const DEVELOPMENT_ROUTES = [
     'morse-code',
 
     // JSON & DATA TOOLS
-    'json-validator',
-    'json-to-csv',
-    'csv-to-json',
-    'yaml-to-json',
-    'json-viewer',
-    'base-converter',
+    "json-validator",
+    "json-to-csv",
+    "csv-to-json",
+    "yaml-to-json",
+    "json-viewer",
+    "base-converter",
 
     // OTHER UTILITIES
-    'uuid-generator',
-    'timestamp-converter',
-    'color-picker',
-    'qr-code-generator',
-    'barcode-generator',
-    'ip-lookup',
-    'user-agent',
-].map(path => ({
+    "uuid-generator",
+    "timestamp-converter",
+    "color-picker",
+    "qr-code-generator",
+    "barcode-generator",
+    "ip-lookup",
+    "user-agent",
+].map((path) => ({
     path,
     element: <Develop />,
-}))
+}));
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <MainLayout />,
         children: [
             {
@@ -111,9 +122,9 @@ const router = createBrowserRouter([
             ...DEVELOPMENT_ROUTES,
 
             {
-                path: '*',
+                path: "*",
                 element: <PageNotFound />,
-            }
+            },
         ],
     },
 ]);

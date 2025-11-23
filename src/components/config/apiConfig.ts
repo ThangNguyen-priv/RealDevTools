@@ -1,7 +1,7 @@
 export const apiConfig = {
     chatbot: {
         BASE_URL: '', // Add your base URL here
-        api_key: 'AIzaSyCspcJP4lJO_DON_f5Y_PP21q4McRJwvT8',
+        api_key: import.meta.env.VITE_API_KEY,
         model: 'gemini-1.5-flash',
         contents:''
     },

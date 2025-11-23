@@ -49,7 +49,7 @@ export default function SidebarLayout({ menuItems = [] }: SidebarItem) {
         <div className="relative">
             {/* Hamburger button */}
             <button
-                className="block md:hidden fixed top-4 left-4 z-25 text-foreground bg-primary p-2 rounded"
+                className="block md:hidden fixed top-4 left-4 z-25 text-foreground p-2 rounded"
                 onClick={() => setIsOpen(true)}>
                 <i className={`fa ${isOpen ? "" : "fa-bars"} text-lg`}></i>
             </button>

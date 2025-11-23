@@ -1,0 +1,9 @@
+.bg-diagonal-stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(180, 151, 151, 0.54) 0,
+    rgb(61, 68, 63) 0.5px,
+    transparent 5px,
+    transparent 10px
+  );
+}
