@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./styles/Index.css";
+import "./styles/index.css";
 import { ThemeProvider } from "./components/ui/ThemeProvider";
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
