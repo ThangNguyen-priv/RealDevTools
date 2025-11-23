@@ -54,10 +54,10 @@ const IMPLEMENTED_ROUTES = [
 const DEVELOPMENT_ROUTES = [
     // HTML / CSS / JS TOOLS
     'html-minifier',
-    'css-minifier', 
+    'css-minifier',
     'js-formatter',
     'js-minifier',
-    
+
     // TEXT TOOLS
     'regex-tester',
     'word-counter',
@@ -65,7 +65,7 @@ const DEVELOPMENT_ROUTES = [
     'random-string',
     'case-converter',
     'duplicate-remover',
-    
+
     // ENCODING TOOLS
     'base64-encode',
     'base64-decode',
@@ -74,7 +74,7 @@ const DEVELOPMENT_ROUTES = [
     'jwt-decode',
     'html-entities',
     'morse-code',
-    
+
     // JSON & DATA TOOLS
     'json-validator',
     'json-to-csv',
@@ -105,14 +105,11 @@ const router = createBrowserRouter([
                 index: true,
                 element: <Dashboard />,
             },
-            
-            // IMPLEMENTED ROUTES
+
             ...IMPLEMENTED_ROUTES,
-            
-            // DEVELOPMENT ROUTES
+
             ...DEVELOPMENT_ROUTES,
-            
-            // ✅ 404 fallback
+
             {
                 path: '*',
                 element: <PageNotFound />,
